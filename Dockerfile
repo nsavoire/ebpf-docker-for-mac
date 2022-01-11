@@ -7,7 +7,7 @@ COPY --from=ksrc /kernel-dev.tar /
 RUN tar xf kernel-dev.tar && rm kernel-dev.tar
 
 RUN apt-get update
-RUN apt install -y kmod python3-bpfcc clang-11 wget make
+RUN apt install -y kmod python3-bpfcc clang-11 wget make gcc gdb
 
 RUN wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
 ENV PATH="/usr/lib/llvm-11/bin/:/usr/local/go/bin:$PATH"
